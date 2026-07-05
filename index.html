@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Triple AI Solutions builds AI employees and automation systems for customer communication, sales, support, calls, and business operations in Moldova, Israel, and international markets."
+    />
+    <title>Triple AI Solutions | AI Employees for Business Growth</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header" id="top">
+        <a class="brand" href="#top" aria-label="Triple AI Solutions home">
+          <span class="brand-mark">TA</span>
+          <span>Triple AI Solutions</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          <a href="#home" data-i18n="nav.home">Home</a>
+          <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
+          <a href="#industries" data-i18n="nav.industries">Industries</a>
+          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+          <a href="#why" data-i18n="nav.why">Why Us</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <label class="select-wrap">
+            <span data-i18n="labels.language">Language</span>
+            <select id="languageSelect" aria-label="Language">
+              <option value="en">EN</option>
+              <option value="ro">RO</option>
+              <option value="ru">RU</option>
+              <option value="he">HE</option>
+            </select>
+          </label>
+          <label class="select-wrap">
+            <span data-i18n="labels.region">Region</span>
+            <select id="regionSelect" aria-label="Region">
+              <option value="moldova">Moldova</option>
+              <option value="israel">Israel</option>
+              <option value="international">International</option>
+            </select>
+          </label>
+          <a class="btn btn-primary btn-small" href="#contact" data-i18n="cta.book">Book Free Consultation</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero section" id="home">
+          <div class="hero-bg" aria-hidden="true">
+            <span class="particle particle-a"></span>
+            <span class="particle particle-b"></span>
+            <span class="particle particle-c"></span>
+          </div>
+          <div class="hero-content reveal">
+            <p class="eyebrow" data-i18n="hero.eyebrow">AI automation for growth-focused companies</p>
+            <h1 data-i18n="hero.title">AI Employees That Help Businesses Grow</h1>
+            <p class="hero-copy" data-i18n="hero.subtitle">
+              Triple AI Solutions develops intelligent AI employees that automate customer communication, sales, support, and business operations.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact" data-i18n="cta.bookShort">Book a Free Consultation</a>
+              <a class="btn btn-secondary" href="#contact" data-i18n="cta.demo">Schedule a Live Demo</a>
+            </div>
+            <div class="value-grid" id="valuePoints"></div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="orbital-grid" aria-hidden="true"></div>
+            <div class="ai-console">
+              <div class="console-top">
+                <div>
+                  <span class="status-dot"></span>
+                  <span data-i18n="visual.status">AI Employee Online</span>
+                </div>
+                <span class="live-pill" data-i18n="visual.live">Live</span>
+              </div>
+              <div class="signal-card primary-signal">
+                <span data-i18n="visual.incoming">Incoming calls</span>
+                <strong>47</strong>
+              </div>
+              <div class="signal-stack" id="visualSignals"></div>
+              <div class="console-footer">
+                <div>
+                  <span data-i18n="visual.response">Avg. response</span>
+                  <strong>2.8s</strong>
+                </div>
+                <div>
+                  <span data-i18n="visual.automation">Automated</span>
+                  <strong>82%</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="solutions">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="solutions.eyebrow">Solutions</p>
+            <h2 data-i18n="solutions.title">AI systems built around your operations</h2>
+            <p data-i18n="solutions.subtitle">Automate customer conversations, calls, follow-ups, internal workflows, and reporting with one connected AI layer.</p>
+          </div>
+          <div class="cards-grid service-grid" id="solutionsGrid"></div>
+        </section>
+
+        <section class="section comparison-section">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="comparison.eyebrow">Comparison</p>
+            <h2 data-i18n="comparison.title">A calmer way to scale customer operations</h2>
+          </div>
+          <div class="comparison-grid reveal" id="comparisonGrid"></div>
+        </section>
+
+        <section class="section" id="why">
+          <div class="why-layout">
+            <div class="section-heading align-start reveal">
+              <p class="eyebrow" data-i18n="why.eyebrow">Trust layer</p>
+              <h2 data-i18n="why.title">Why Triple AI Solutions?</h2>
+              <p data-i18n="why.subtitle">
+                We do not sell generic bots. We design AI employees around your real business process, your language, your customers, and your tools.
+              </p>
+            </div>
+            <div class="trust-grid reveal" id="trustGrid"></div>
+          </div>
+        </section>
+
+        <section class="section" id="industries">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="industries.eyebrow">Industries</p>
+            <h2 data-i18n="industries.title">Designed for service-heavy businesses</h2>
+          </div>
+          <div class="industry-grid reveal" id="industryGrid"></div>
+        </section>
+
+        <section class="section pricing-section" id="pricing">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="pricing.eyebrow">Pricing</p>
+            <h2 data-i18n="pricing.title">Estimate your AI automation investment</h2>
+            <p data-i18n="pricing.subtitle">Use the calculator for a practical starting point. Final pricing depends on channels, integrations, languages, and workflow complexity.</p>
+          </div>
+          <div class="calculator reveal">
+            <div class="calculator-form">
+              <label>
+                <span data-i18n="pricing.region">Region</span>
+                <select id="calcRegion"></select>
+              </label>
+              <label>
+                <span data-i18n="pricing.solution">Solution type</span>
+                <select id="solutionType"></select>
+              </label>
+              <fieldset>
+                <legend data-i18n="pricing.channels">Channels</legend>
+                <div class="check-grid" id="channelChecks"></div>
+              </fieldset>
+              <label>
+                <span data-i18n="pricing.complexity">Complexity</span>
+                <select id="complexity"></select>
+              </label>
+              <label>
+                <span data-i18n="pricing.support">Monthly support</span>
+                <select id="support"></select>
+              </label>
+            </div>
+            <aside class="calculator-result">
+              <p class="eyebrow" data-i18n="pricing.result">Estimated starting point</p>
+              <div class="price-line">
+                <span data-i18n="pricing.setup">Setup price</span>
+                <strong id="setupPrice">€0</strong>
+              </div>
+              <div class="price-line">
+                <span data-i18n="pricing.monthly">Monthly support</span>
+                <strong id="monthlyPrice">€0</strong>
+              </div>
+              <p class="fine-print" data-i18n="pricing.note">Starting from. Exact quote after process analysis.</p>
+              <a class="btn btn-primary" href="#contact" data-i18n="pricing.cta">Request Exact Quote</a>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section process-section">
+          <div class="section-heading reveal">
+            <p class="eyebrow" data-i18n="process.eyebrow">Process</p>
+            <h2 data-i18n="process.title">From consultation to measurable automation</h2>
+          </div>
+          <div class="process-steps reveal" id="processSteps"></div>
+        </section>
+
+        <section class="section cta-section reveal">
+          <div>
+            <p class="eyebrow" data-i18n="finalCta.eyebrow">First AI employee</p>
+            <h2 data-i18n="finalCta.title">Ready to Build Your First AI Employee?</h2>
+            <p data-i18n="finalCta.subtitle">Book a free consultation and we will show you which parts of your business can be automated first.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact" data-i18n="cta.book">Book Free Consultation</a>
+            <a class="btn btn-secondary" href="#contact" data-i18n="cta.demo">Schedule Live Demo</a>
+          </div>
+        </section>
+
+        <section class="section contact-section" id="contact">
+          <div class="contact-panel reveal">
+            <div class="contact-copy">
+              <p class="eyebrow" data-i18n="contact.eyebrow">Contact</p>
+              <h2 data-i18n="contact.title">Tell us what you want to automate</h2>
+              <p data-i18n="contact.subtitle">We will review your workflow and suggest the fastest path to your first useful AI employee.</p>
+              <div class="contact-details">
+                <span>Email: contact@tripleaisolutions.com</span>
+                <span>Telegram: @tripleaisolutions</span>
+                <span data-i18n="contact.location">Location: Moldova / Israel / International</span>
+              </div>
+            </div>
+            <form class="contact-form">
+              <label><span data-i18n="form.name">Name</span><input type="text" name="name" required /></label>
+              <label><span data-i18n="form.phone">Phone / WhatsApp</span><input type="tel" name="phone" required /></label>
+              <label><span data-i18n="form.email">Email</span><input type="email" name="email" required /></label>
+              <label><span data-i18n="form.company">Company</span><input type="text" name="company" /></label>
+              <label><span data-i18n="form.region">Region</span><select name="region" id="formRegion"></select></label>
+              <label class="full"><span data-i18n="form.automation">What do you want to automate?</span><textarea name="automation" rows="5"></textarea></label>
+              <button class="btn btn-primary full" type="submit" data-i18n="form.submit">Send Request</button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="brand" href="#top">
+          <span class="brand-mark">TA</span>
+          <span>Triple AI Solutions</span>
+        </a>
+        <div class="footer-links">
+          <a href="#home" data-i18n="nav.home">Home</a>
+          <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
+          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </div>
+        <p>contact@tripleaisolutions.com</p>
+      </footer>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
