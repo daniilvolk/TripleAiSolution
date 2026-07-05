@@ -1,4 +1,4 @@
-const TRANSLATIONS = {
+var TRANSLATIONS = {
   en: {
     meta: {
       title: "Triple AI Solutions | AI Employees for Business Growth",
@@ -128,7 +128,12 @@ const TRANSLATIONS = {
       eyebrow: "Contact",
       title: "Tell us what you want to automate",
       subtitle: "We will review your workflow and suggest the fastest path to your first useful AI employee.",
-      location: "Location: Moldova / Israel / International",
+      telegramTitle: "Telegram",
+      telegramText: "Fastest way to reach us",
+      emailTitle: "Email",
+      emailText: "For detailed project discussions",
+      locationTitle: "Meeting location",
+      location: "Ready to meet you anywhere on the internet.",
     },
     form: { name: "Name", phone: "Phone / WhatsApp", email: "Email", company: "Company", region: "Region", automation: "What do you want to automate?", submit: "Send Request" },
   },
@@ -171,7 +176,7 @@ const TRANSLATIONS = {
     },
     process: { eyebrow: "Proces", title: "De la consultatie la automatizare masurabila", steps: ["Consultatie gratuita", "Analiza proceselor", "Design solutie AI", "Dezvoltare si integrari", "Testare si training", "Lansare", "Optimizare si suport"] },
     finalCta: { eyebrow: "Primul angajat AI", title: "Esti gata sa construiesti primul angajat AI?", subtitle: "Programeaza o consultatie gratuita si iti aratam ce parti ale afacerii pot fi automatizate primele." },
-    contact: { eyebrow: "Contact", title: "Spune-ne ce vrei sa automatizezi", subtitle: "Analizam workflow-ul si propunem cea mai rapida cale catre primul angajat AI util.", location: "Locatie: Moldova / Israel / International" },
+    contact: { eyebrow: "Contact", title: "Spune-ne ce vrei sa automatizezi", subtitle: "Analizam workflow-ul si propunem cea mai rapida cale catre primul angajat AI util.", telegramTitle: "Telegram", telegramText: "Cel mai rapid mod de a ne contacta", emailTitle: "Email", emailText: "Pentru discutii detaliate despre proiect", locationTitle: "Locul intalnirii", location: "Suntem gata sa ne intalnim cu tine oriunde pe internet." },
     form: { name: "Nume", phone: "Telefon / WhatsApp", email: "Email", company: "Companie", region: "Regiune", automation: "Ce vrei sa automatizezi?", submit: "Trimite cererea" },
   },
   ru: {
@@ -213,7 +218,7 @@ const TRANSLATIONS = {
     },
     process: { eyebrow: "Процесс", title: "От консультации до измеримой автоматизации", steps: ["Бесплатная консультация", "Анализ бизнес-процессов", "Проектирование AI-решения", "Разработка и интеграции", "Тестирование и обучение", "Запуск", "Оптимизация и поддержка"] },
     finalCta: { eyebrow: "Первый AI-сотрудник", title: "Готовы создать первого AI-сотрудника?", subtitle: "Запишитесь на бесплатную консультацию, и мы покажем, какие части бизнеса можно автоматизировать первыми." },
-    contact: { eyebrow: "Контакты", title: "Расскажите, что хотите автоматизировать", subtitle: "Мы изучим workflow и предложим самый быстрый путь к первому полезному AI-сотруднику.", location: "Локация: Молдова / Израиль / Международные рынки" },
+    contact: { eyebrow: "Контакты", title: "Расскажите, что хотите автоматизировать", subtitle: "Мы изучим workflow и предложим самый быстрый путь к первому полезному AI-сотруднику.", telegramTitle: "Telegram", telegramText: "Самый быстрый способ связаться с нами", emailTitle: "Email", emailText: "Для детального обсуждения проекта", locationTitle: "Локация встречи", location: "Готовы встретиться с вами в любом месте интернета." },
     form: { name: "Имя", phone: "Телефон / WhatsApp", email: "Email", company: "Компания", region: "Регион", automation: "Что вы хотите автоматизировать?", submit: "Отправить заявку" },
   },
   he: {
@@ -255,7 +260,7 @@ const TRANSLATIONS = {
     },
     process: { eyebrow: "תהליך", title: "מייעוץ ועד אוטומציה מדידה", steps: ["ייעוץ חינם", "ניתוח תהליך עסקי", "תכנון פתרון AI", "פיתוח ואינטגרציות", "בדיקות והדרכה", "השקה", "אופטימיזציה ותמיכה"] },
     finalCta: { eyebrow: "עובד AI ראשון", title: "מוכנים לבנות את עובד ה-AI הראשון?", subtitle: "קבעו ייעוץ חינם ונראה אילו חלקים בעסק כדאי לאוטומט ראשונים." },
-    contact: { eyebrow: "יצירת קשר", title: "ספרו לנו מה תרצו לאוטומט", subtitle: "נבחן את התהליך ונציע את הדרך המהירה ביותר לעובד AI שימושי ראשון.", location: "מיקום: מולדובה / ישראל / בינלאומי" },
+    contact: { eyebrow: "יצירת קשר", title: "ספרו לנו מה תרצו לאוטומט", subtitle: "נבחן את התהליך ונציע את הדרך המהירה ביותר לעובד AI שימושי ראשון.", telegramTitle: "Telegram", telegramText: "הדרך המהירה ביותר ליצור איתנו קשר", emailTitle: "Email", emailText: "לשיחה מפורטת על הפרויקט", locationTitle: "מיקום הפגישה", location: "נשמח לפגוש אתכם בכל מקום באינטרנט." },
     form: { name: "שם", phone: "טלפון / WhatsApp", email: "אימייל", company: "חברה", region: "אזור", automation: "מה תרצו לאוטומט?", submit: "שליחת פנייה" },
   },
 };

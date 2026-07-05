@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="6" y1="6" x2="58" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#39e5d1"/>
+      <stop offset="0.52" stop-color="#4da3ff"/>
+      <stop offset="1" stop-color="#8e6bff"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#4da3ff" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="5" y="5" width="54" height="54" rx="13" fill="url(#g)" filter="url(#s)"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="900" fill="#061323">TA</text>
+</svg>

@@ -8,7 +8,8 @@
       content="Triple AI Solutions builds AI employees and automation systems for customer communication, sales, support, calls, and business operations in Moldova, Israel, and international markets."
     />
     <title>Triple AI Solutions | AI Employees for Business Growth</title>
-    <link rel="stylesheet" href="styles.css?v=20260705-3" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=20260705-5" />
+    <link rel="stylesheet" href="styles.css?v=20260705-5" />
   </head>
   <body>
     <div class="page-shell">
@@ -33,7 +34,7 @@
         </nav>
 
         <div class="header-actions">
-          <label class="select-wrap">
+          <label class="select-wrap control-language">
             <span data-i18n="labels.language">Language</span>
             <select id="languageSelect" aria-label="Language">
               <option value="en">EN</option>
@@ -42,7 +43,7 @@
               <option value="he">HE</option>
             </select>
           </label>
-          <label class="select-wrap">
+          <label class="select-wrap control-region">
             <span data-i18n="labels.region">Region</span>
             <select id="regionSelect" aria-label="Region">
               <option value="moldova">Moldova</option>
@@ -151,34 +152,60 @@
             <div class="calculator-form">
               <label>
                 <span data-i18n="pricing.region">Region</span>
-                <select id="calcRegion"></select>
+                <select id="calcRegion">
+                  <option value="moldova">Moldova</option>
+                  <option value="israel" selected>Israel</option>
+                  <option value="international">International</option>
+                </select>
               </label>
               <label>
                 <span data-i18n="pricing.solution">Solution type</span>
-                <select id="solutionType"></select>
+                <select id="solutionType">
+                  <option value="chatbot" selected>Chatbot</option>
+                  <option value="voice">Voice AI</option>
+                  <option value="automation">Business automation</option>
+                  <option value="integrations">Integrations</option>
+                  <option value="full">Full AI employee system</option>
+                </select>
               </label>
               <fieldset>
                 <legend data-i18n="pricing.channels">Channels</legend>
-                <div class="check-grid" id="channelChecks"></div>
+                <div class="check-grid" id="channelChecks">
+                  <label class="check-pill"><input type="checkbox" name="channels" value="website" checked /><span>Website</span></label>
+                  <label class="check-pill"><input type="checkbox" name="channels" value="whatsapp" checked /><span>WhatsApp</span></label>
+                  <label class="check-pill"><input type="checkbox" name="channels" value="telegram" /><span>Telegram</span></label>
+                  <label class="check-pill"><input type="checkbox" name="channels" value="instagram" /><span>Instagram</span></label>
+                  <label class="check-pill"><input type="checkbox" name="channels" value="phone" /><span>Phone calls</span></label>
+                  <label class="check-pill"><input type="checkbox" name="channels" value="crm" /><span>CRM</span></label>
+                </div>
               </fieldset>
               <label>
                 <span data-i18n="pricing.complexity">Complexity</span>
-                <select id="complexity"></select>
+                <select id="complexity">
+                  <option value="basic" selected>Basic</option>
+                  <option value="standard">Standard</option>
+                  <option value="advanced">Advanced</option>
+                </select>
               </label>
               <label>
                 <span data-i18n="pricing.support">Monthly support</span>
-                <select id="support"></select>
+                <select id="support">
+                  <option value="none">No</option>
+                  <option value="basic" selected>Basic</option>
+                  <option value="growth">Growth</option>
+                  <option value="premium">Premium</option>
+                </select>
               </label>
             </div>
             <aside class="calculator-result">
               <p class="eyebrow" data-i18n="pricing.result">Estimated starting point</p>
               <div class="price-line">
                 <span data-i18n="pricing.setup">Setup price</span>
-                <strong id="setupPrice">€0</strong>
+                <strong id="setupPrice">Starting from ₪1,800</strong>
               </div>
               <div class="price-line">
                 <span data-i18n="pricing.monthly">Monthly support</span>
-                <strong id="monthlyPrice">€0</strong>
+                <strong id="monthlyPrice">Starting from ₪650</strong>
               </div>
               <p class="fine-print" data-i18n="pricing.note">Starting from. Exact quote after process analysis.</p>
               <a class="btn btn-primary" href="#contact" data-i18n="pricing.cta">Request Exact Quote</a>
@@ -213,9 +240,29 @@
               <h2 data-i18n="contact.title">Tell us what you want to automate</h2>
               <p data-i18n="contact.subtitle">We will review your workflow and suggest the fastest path to your first useful AI employee.</p>
               <div class="contact-details">
-                <span>Email: contact@tripleaisolutions.com</span>
-                <span>Telegram: @tripleaisolutions</span>
-                <span data-i18n="contact.location">Location: Moldova / Israel / International</span>
+                <article class="contact-card">
+                  <span class="contact-icon">TG</span>
+                  <div>
+                    <strong data-i18n="contact.telegramTitle">Telegram</strong>
+                    <p data-i18n="contact.telegramText">Fastest way to reach us</p>
+                    <a href="https://t.me/tripleaisolutions">@tripleaisolutions</a>
+                  </div>
+                </article>
+                <article class="contact-card">
+                  <span class="contact-icon">@</span>
+                  <div>
+                    <strong data-i18n="contact.emailTitle">Email</strong>
+                    <p data-i18n="contact.emailText">For detailed project discussions</p>
+                    <a href="mailto:contact@tripleaisolutions.com">contact@tripleaisolutions.com</a>
+                  </div>
+                </article>
+                <article class="contact-card">
+                  <span class="contact-icon">NET</span>
+                  <div>
+                    <strong data-i18n="contact.locationTitle">Meeting location</strong>
+                    <p data-i18n="contact.location">Ready to meet you anywhere on the internet.</p>
+                  </div>
+                </article>
               </div>
             </div>
             <form class="contact-form">
@@ -223,7 +270,11 @@
               <label><span data-i18n="form.phone">Phone / WhatsApp</span><input type="tel" name="phone" required /></label>
               <label><span data-i18n="form.email">Email</span><input type="email" name="email" required /></label>
               <label><span data-i18n="form.company">Company</span><input type="text" name="company" /></label>
-              <label><span data-i18n="form.region">Region</span><select name="region" id="formRegion"></select></label>
+              <label><span data-i18n="form.region">Region</span><select name="region" id="formRegion">
+                <option value="moldova">Moldova</option>
+                <option value="israel" selected>Israel</option>
+                <option value="international">International</option>
+              </select></label>
               <label class="full"><span data-i18n="form.automation">What do you want to automate?</span><textarea name="automation" rows="5"></textarea></label>
               <button class="btn btn-primary full" type="submit" data-i18n="form.submit">Send Request</button>
             </form>
@@ -246,7 +297,7 @@
       </footer>
     </div>
 
-    <script src="translations.js?v=20260705-3"></script>
-    <script src="script.js?v=20260705-3"></script>
+    <script src="translations.js?v=20260705-5"></script>
+    <script src="script.js?v=20260705-5"></script>
   </body>
 </html>

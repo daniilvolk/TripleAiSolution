@@ -1,33 +1,28 @@
-const state = {
-  language: detectLanguage(),
-  region: detectRegion(),
-};
-
-const pricing = {
+var pricing = {
   moldova: {
-    currency: "€",
+    currency: "\u20ac",
     suffix: "",
     setup: { chatbot: 300, automation: 500, integrations: 400, voice: 700, full: 1200 },
     support: { none: 0, basic: 120, growth: 250, premium: 450 },
   },
   israel: {
-    currency: "₪",
+    currency: "\u20aa",
     suffix: "",
     setup: { chatbot: 1800, automation: 3000, integrations: 2500, voice: 4500, full: 7600 },
     support: { none: 0, basic: 650, growth: 1200, premium: 2200 },
   },
   international: {
-    currency: "€",
+    currency: "\u20ac",
     suffix: "",
     setup: { chatbot: 600, automation: 900, integrations: 700, voice: 1200, full: 2200 },
     support: { none: 0, basic: 220, growth: 450, premium: 850 },
   },
 };
 
-const complexityMultiplier = { basic: 1, standard: 1.35, advanced: 1.85 };
-const channelPrice = { moldova: 70, israel: 350, international: 120 };
+var complexityMultiplier = { basic: 1, standard: 1.35, advanced: 1.85 };
+var channelPrice = { moldova: 70, israel: 350, international: 120 };
 
-const ids = {
+var ids = {
   language: document.getElementById("languageSelect"),
   region: document.getElementById("regionSelect"),
   calcRegion: document.getElementById("calcRegion"),
@@ -40,47 +35,96 @@ const ids = {
   monthlyPrice: document.getElementById("monthlyPrice"),
   menuToggle: document.querySelector(".menu-toggle"),
   nav: document.getElementById("site-nav"),
+  headerActions: document.querySelector(".header-actions"),
 };
 
-function detectLanguage() {
-  const stored = localStorage.getItem("triple-ai-language");
-  if (stored && TRANSLATIONS[stored]) return stored;
+var state = {
+  language: detectLanguage(),
+  region: detectRegion(),
+};
 
-  const language = (navigator.language || "en").slice(0, 2).toLowerCase();
-  if (["en", "ro", "ru", "he"].includes(language)) return language;
+function getStored(key) {
+  try {
+    return window.localStorage ? localStorage.getItem(key) : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function setStored(key, value) {
+  try {
+    if (window.localStorage) localStorage.setItem(key, value);
+  } catch (error) {}
+}
+
+function detectLanguage() {
+  var stored = getStored("triple-ai-language");
+  if (stored && window.TRANSLATIONS && TRANSLATIONS[stored]) return stored;
+
+  var language = (navigator.language || "en").slice(0, 2).toLowerCase();
+  if (["en", "ro", "ru", "he"].indexOf(language) !== -1) return language;
   return "en";
 }
 
 function detectRegion() {
-  const stored = localStorage.getItem("triple-ai-region");
+  var stored = getStored("triple-ai-region");
   if (stored && pricing[stored]) return stored;
 
-  const locale = `${navigator.language || ""} ${Intl.DateTimeFormat().resolvedOptions().timeZone || ""}`.toLowerCase();
-  if (locale.includes("israel") || locale.includes("jerusalem") || locale.includes("-il") || locale.endsWith("he")) return "israel";
-  if (locale.includes("chisinau") || locale.includes("moldova") || locale.includes("-md") || locale.includes("ro")) return "moldova";
+  var timezone = "";
+  try {
+    timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
+  } catch (error) {}
+
+  var locale = ((navigator.language || "") + " " + timezone).toLowerCase();
+  if (locale.indexOf("israel") !== -1 || locale.indexOf("jerusalem") !== -1 || locale.indexOf("-il") !== -1 || locale.slice(-2) === "he") return "israel";
+  if (locale.indexOf("chisinau") !== -1 || locale.indexOf("moldova") !== -1 || locale.indexOf("-md") !== -1 || locale.indexOf("ro") !== -1) return "moldova";
   return "international";
 }
 
 function t(path) {
-  return path.split(".").reduce((value, key) => value?.[key], TRANSLATIONS[state.language]) ?? path;
+  var dictionary = window.TRANSLATIONS && TRANSLATIONS[state.language] ? TRANSLATIONS[state.language] : null;
+  var value = dictionary;
+  var parts = path.split(".");
+
+  for (var i = 0; i < parts.length; i += 1) {
+    if (!value || typeof value !== "object" || !(parts[i] in value)) return path;
+    value = value[parts[i]];
+  }
+
+  return value;
 }
 
 function setOptions(select, options, selected) {
-  select.innerHTML = Object.entries(options)
-    .map(([value, label]) => `<option value="${value}" ${value === selected ? "selected" : ""}>${label}</option>`)
-    .join("");
+  if (!select || !options) return;
+
+  var html = "";
+  var keys = Object.keys(options);
+  for (var i = 0; i < keys.length; i += 1) {
+    var value = keys[i];
+    html += '<option value="' + value + '"' + (value === selected ? " selected" : "") + ">" + options[value] + "</option>";
+  }
+  select.innerHTML = html;
 }
 
 function applyTranslations() {
-  const dictionary = TRANSLATIONS[state.language];
+  if (!window.TRANSLATIONS || !TRANSLATIONS[state.language]) {
+    updatePrice();
+    observeReveals();
+    return;
+  }
+
+  var dictionary = TRANSLATIONS[state.language];
   document.documentElement.lang = state.language;
   document.documentElement.dir = state.language === "he" ? "rtl" : "ltr";
   document.title = dictionary.meta.title;
-  document.querySelector("meta[name='description']").setAttribute("content", dictionary.meta.description);
 
-  document.querySelectorAll("[data-i18n]").forEach((node) => {
-    node.textContent = t(node.dataset.i18n);
-  });
+  var description = document.querySelector("meta[name='description']");
+  if (description) description.setAttribute("content", dictionary.meta.description);
+
+  var translatable = document.querySelectorAll("[data-i18n]");
+  for (var i = 0; i < translatable.length; i += 1) {
+    translatable[i].textContent = t(translatable[i].getAttribute("data-i18n"));
+  }
 
   renderValuePoints();
   renderVisualSignals();
@@ -93,184 +137,246 @@ function applyTranslations() {
 }
 
 function renderValuePoints() {
-  document.getElementById("valuePoints").innerHTML = t("hero.values")
-    .map((item) => `<div class="value-card"><span></span><p>${item}</p></div>`)
-    .join("");
+  var items = t("hero.values");
+  if (!items || !items.length) return;
+
+  var html = "";
+  for (var i = 0; i < items.length; i += 1) {
+    html += '<div class="value-card"><span></span><p>' + items[i] + "</p></div>";
+  }
+  document.getElementById("valuePoints").innerHTML = html;
 }
 
 function renderVisualSignals() {
-  document.getElementById("visualSignals").innerHTML = t("visual.signals")
-    .map((item, index) => `<div class="signal-card signal-${index}"><span>${item}</span><strong>${index === 0 ? "128" : index === 1 ? "34" : index === 2 ? "19" : "+22%"}</strong></div>`)
-    .join("");
+  var items = t("visual.signals");
+  var values = ["128", "34", "19", "+22%"];
+  if (!items || !items.length) return;
+
+  var html = "";
+  for (var i = 0; i < items.length; i += 1) {
+    html += '<div class="signal-card signal-' + i + '"><span>' + items[i] + "</span><strong>" + values[i] + "</strong></div>";
+  }
+  document.getElementById("visualSignals").innerHTML = html;
 }
 
 function renderSolutions() {
-  document.getElementById("solutionsGrid").innerHTML = t("solutions.items")
-    .map(
-      (item, index) => `
-        <article class="service-card reveal" style="--delay:${index * 70}ms">
-          <div class="card-icon">${String(index + 1).padStart(2, "0")}</div>
-          <h3>${item.title}</h3>
-          <p>${item.description}</p>
-          <ul>${item.features.map((feature) => `<li>${feature}</li>`).join("")}</ul>
-        </article>
-      `
-    )
-    .join("");
+  var items = t("solutions.items");
+  if (!items || !items.length) return;
+
+  var html = "";
+  for (var i = 0; i < items.length; i += 1) {
+    var item = items[i];
+    var number = i + 1 < 10 ? "0" + (i + 1) : String(i + 1);
+    html += '<article class="service-card reveal" style="--delay:' + i * 70 + 'ms">';
+    html += '<div class="card-icon">' + number + "</div>";
+    html += "<h3>" + item.title + "</h3>";
+    html += "<p>" + item.description + "</p><ul>";
+    for (var f = 0; f < item.features.length; f += 1) html += "<li>" + item.features[f] + "</li>";
+    html += "</ul></article>";
+  }
+  document.getElementById("solutionsGrid").innerHTML = html;
   observeReveals();
 }
 
 function renderComparison() {
-  const blocks = [
+  var blocks = [
     { title: t("comparison.withTitle"), items: t("comparison.with"), className: "positive" },
     { title: t("comparison.withoutTitle"), items: t("comparison.without"), className: "negative" },
   ];
-  document.getElementById("comparisonGrid").innerHTML = blocks
-    .map(
-      (block) => `
-        <article class="comparison-card ${block.className}">
-          <h3>${block.title}</h3>
-          <ul>${block.items.map((item) => `<li>${item}</li>`).join("")}</ul>
-        </article>
-      `
-    )
-    .join("");
+  var html = "";
+
+  for (var i = 0; i < blocks.length; i += 1) {
+    html += '<article class="comparison-card ' + blocks[i].className + '"><h3>' + blocks[i].title + "</h3><ul>";
+    for (var j = 0; j < blocks[i].items.length; j += 1) html += "<li>" + blocks[i].items[j] + "</li>";
+    html += "</ul></article>";
+  }
+  document.getElementById("comparisonGrid").innerHTML = html;
 }
 
 function renderTrust() {
-  document.getElementById("trustGrid").innerHTML = t("why.items")
-    .map((item) => `<div class="trust-card"><span></span>${item}</div>`)
-    .join("");
+  var items = t("why.items");
+  if (!items || !items.length) return;
+
+  var html = "";
+  for (var i = 0; i < items.length; i += 1) html += '<div class="trust-card"><span></span>' + items[i] + "</div>";
+  document.getElementById("trustGrid").innerHTML = html;
 }
 
 function renderIndustries() {
-  document.getElementById("industryGrid").innerHTML = t("industries.items")
-    .map(([title, description]) => `<article class="industry-card"><h3>${title}</h3><p>${description}</p></article>`)
-    .join("");
+  var items = t("industries.items");
+  if (!items || !items.length) return;
+
+  var html = "";
+  for (var i = 0; i < items.length; i += 1) html += '<article class="industry-card"><h3>' + items[i][0] + "</h3><p>" + items[i][1] + "</p></article>";
+  document.getElementById("industryGrid").innerHTML = html;
 }
 
 function renderProcess() {
-  document.getElementById("processSteps").innerHTML = t("process.steps")
-    .map((step, index) => `<div class="process-step"><span>${index + 1}</span><p>${step}</p></div>`)
-    .join("");
+  var steps = t("process.steps");
+  if (!steps || !steps.length) return;
+
+  var html = "";
+  for (var i = 0; i < steps.length; i += 1) html += '<div class="process-step"><span>' + (i + 1) + "</span><p>" + steps[i] + "</p></div>";
+  document.getElementById("processSteps").innerHTML = html;
 }
 
 function renderCalculatorOptions() {
+  var selectedSolution = ids.solutionType && ids.solutionType.value ? ids.solutionType.value : "chatbot";
+  var selectedComplexity = ids.complexity && ids.complexity.value ? ids.complexity.value : "basic";
+  var selectedSupport = ids.support && ids.support.value ? ids.support.value : "basic";
+
   setOptions(ids.region, t("pricing.regions"), state.region);
   setOptions(ids.calcRegion, t("pricing.regions"), state.region);
   setOptions(ids.formRegion, t("pricing.regions"), state.region);
-  setOptions(ids.solutionType, t("pricing.solutions"), ids.solutionType.value || "chatbot");
-  setOptions(ids.complexity, t("pricing.complexities"), ids.complexity.value || "basic");
-  setOptions(ids.support, t("pricing.supportLevels"), ids.support.value || "basic");
-
-  const selectedChannels = [...document.querySelectorAll("input[name='channels']:checked")].map((input) => input.value);
-  ids.channelChecks.innerHTML = Object.entries(t("pricing.channelsList"))
-    .map(([value, label]) => {
-      const checked = selectedChannels.length ? selectedChannels.includes(value) : ["website", "whatsapp"].includes(value);
-      return `<label class="check-pill"><input type="checkbox" name="channels" value="${value}" ${checked ? "checked" : ""} /><span>${label}</span></label>`;
-    })
-    .join("");
-
-  document.querySelectorAll("input[name='channels']").forEach((input) => input.addEventListener("change", updatePrice));
+  setOptions(ids.solutionType, t("pricing.solutions"), selectedSolution);
+  setOptions(ids.complexity, t("pricing.complexities"), selectedComplexity);
+  setOptions(ids.support, t("pricing.supportLevels"), selectedSupport);
+  renderChannels();
   updatePrice();
 }
 
+function getSelectedChannels() {
+  var selected = [];
+  var checked = document.querySelectorAll("input[name='channels']:checked");
+  for (var i = 0; i < checked.length; i += 1) selected.push(checked[i].value);
+  return selected;
+}
+
+function renderChannels() {
+  if (!ids.channelChecks) return;
+
+  var options = t("pricing.channelsList");
+  if (!options || typeof options !== "object") return;
+
+  var selected = getSelectedChannels();
+  var defaults = ["website", "whatsapp"];
+  var keys = Object.keys(options);
+  var html = "";
+
+  for (var i = 0; i < keys.length; i += 1) {
+    var value = keys[i];
+    var checked = selected.length ? selected.indexOf(value) !== -1 : defaults.indexOf(value) !== -1;
+    html += '<label class="check-pill"><input type="checkbox" name="channels" value="' + value + '"' + (checked ? " checked" : "") + " /><span>" + options[value] + "</span></label>";
+  }
+
+  ids.channelChecks.innerHTML = html;
+  bindChannelEvents();
+}
+
+function bindChannelEvents() {
+  var inputs = document.querySelectorAll("input[name='channels']");
+  for (var i = 0; i < inputs.length; i += 1) inputs[i].addEventListener("change", updatePrice);
+}
+
 function updatePrice() {
-  const region = ids.calcRegion.value;
-  const solution = ids.solutionType.value;
-  const complexity = ids.complexity.value;
-  const support = ids.support.value;
-  const channels = document.querySelectorAll("input[name='channels']:checked").length;
-  const regionPricing = pricing[region];
+  if (!ids.calcRegion || !ids.solutionType || !ids.complexity || !ids.support || !ids.setupPrice || !ids.monthlyPrice) return;
 
-  const base = regionPricing.setup[solution] || regionPricing.setup.chatbot;
-  const setup = Math.round(base * complexityMultiplier[complexity] + Math.max(0, channels - 1) * channelPrice[region]);
-  const monthly = regionPricing.support[support] + Math.max(0, channels - 2) * Math.round(channelPrice[region] * 0.35);
+  var region = ids.calcRegion.value || state.region || "international";
+  var solution = ids.solutionType.value || "chatbot";
+  var complexity = ids.complexity.value || "basic";
+  var support = ids.support.value || "basic";
+  var channels = document.querySelectorAll("input[name='channels']:checked").length;
+  var regionPricing = pricing[region] || pricing.international;
+  var base = regionPricing.setup[solution] || regionPricing.setup.chatbot;
+  var setup = Math.round(base * (complexityMultiplier[complexity] || 1) + Math.max(0, channels - 1) * (channelPrice[region] || channelPrice.international));
+  var monthly = (regionPricing.support[support] || 0) + Math.max(0, channels - 2) * Math.round((channelPrice[region] || channelPrice.international) * 0.35);
+  var starting = window.TRANSLATIONS ? t("pricing.starting") : "Starting from";
 
-  ids.setupPrice.textContent = `${t("pricing.starting")} ${formatPrice(setup, regionPricing)}`;
-  ids.monthlyPrice.textContent = support === "none" ? formatPrice(0, regionPricing) : `${t("pricing.starting")} ${formatPrice(monthly, regionPricing)}`;
+  ids.setupPrice.textContent = starting + " " + formatPrice(setup, regionPricing);
+  ids.monthlyPrice.textContent = support === "none" ? formatPrice(0, regionPricing) : starting + " " + formatPrice(monthly, regionPricing);
 }
 
 function formatPrice(value, regionPricing) {
-  return `${regionPricing.currency}${value.toLocaleString("en-US")}${regionPricing.suffix}`;
+  return regionPricing.currency + Number(value).toLocaleString("en-US") + regionPricing.suffix;
 }
 
 function syncRegion(region) {
-  state.region = region;
-  localStorage.setItem("triple-ai-region", region);
-  ids.region.value = region;
-  ids.calcRegion.value = region;
-  ids.formRegion.value = region;
+  state.region = region || "international";
+  setStored("triple-ai-region", state.region);
+  if (ids.region) ids.region.value = state.region;
+  if (ids.calcRegion) ids.calcRegion.value = state.region;
+  if (ids.formRegion) ids.formRegion.value = state.region;
   updatePrice();
 }
 
 function observeReveals() {
-  const revealItems = document.querySelectorAll(".reveal:not(.is-visible)");
+  var revealItems = document.querySelectorAll(".reveal:not(.is-visible)");
 
   if (!("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => item.classList.add("is-visible"));
+    for (var i = 0; i < revealItems.length; i += 1) revealItems[i].classList.add("is-visible");
     return;
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
+  var observer = new IntersectionObserver(function (entries) {
+    for (var i = 0; i < entries.length; i += 1) {
+      if (entries[i].isIntersecting) {
+        entries[i].target.classList.add("is-visible");
+        observer.unobserve(entries[i].target);
+      }
+    }
+  }, { threshold: 0.12 });
 
-  revealItems.forEach((item) => {
-    item.classList.add("can-reveal");
-    observer.observe(item);
-  });
+  for (var j = 0; j < revealItems.length; j += 1) {
+    revealItems[j].classList.add("can-reveal");
+    observer.observe(revealItems[j]);
+  }
+}
+
+function closeMenu() {
+  if (!ids.menuToggle || !ids.nav || !ids.headerActions) return;
+  ids.menuToggle.setAttribute("aria-expanded", "false");
+  ids.nav.classList.remove("is-open");
+  ids.headerActions.classList.remove("is-open");
 }
 
 function bindEvents() {
-  ids.language.value = state.language;
-  ids.region.value = state.region;
-
-  ids.language.addEventListener("change", (event) => {
-    state.language = event.target.value;
-    localStorage.setItem("triple-ai-language", state.language);
-    applyTranslations();
-  });
-
-  ids.region.addEventListener("change", (event) => syncRegion(event.target.value));
-  ids.calcRegion.addEventListener("change", (event) => syncRegion(event.target.value));
-  ids.formRegion.addEventListener("change", (event) => syncRegion(event.target.value));
-  [ids.solutionType, ids.complexity, ids.support].forEach((select) => select.addEventListener("change", updatePrice));
-
-  ids.menuToggle.addEventListener("click", () => {
-    const expanded = ids.menuToggle.getAttribute("aria-expanded") === "true";
-    ids.menuToggle.setAttribute("aria-expanded", String(!expanded));
-    ids.nav.classList.toggle("is-open");
-    document.querySelector(".header-actions").classList.toggle("is-open");
-  });
-
-  document.querySelectorAll("a[href^='#']").forEach((anchor) => {
-    anchor.addEventListener("click", () => {
-      ids.menuToggle.setAttribute("aria-expanded", "false");
-      ids.nav.classList.remove("is-open");
-      document.querySelector(".header-actions").classList.remove("is-open");
+  if (ids.language) {
+    ids.language.value = state.language;
+    ids.language.addEventListener("change", function (event) {
+      state.language = event.target.value;
+      setStored("triple-ai-language", state.language);
+      applyTranslations();
     });
-  });
+  }
 
-  document.querySelector(".contact-form").addEventListener("submit", (event) => {
-    event.preventDefault();
-    const button = event.currentTarget.querySelector("button");
-    const original = button.textContent;
-    button.textContent = state.language === "ru" ? "Заявка подготовлена" : state.language === "ro" ? "Cerere pregatita" : state.language === "he" ? "הפנייה מוכנה" : "Request prepared";
-    setTimeout(() => {
-      button.textContent = original;
-      event.currentTarget.reset();
-      ids.formRegion.value = state.region;
-    }, 1800);
-  });
+  if (ids.region) {
+    ids.region.value = state.region;
+    ids.region.addEventListener("change", function (event) { syncRegion(event.target.value); });
+  }
+  if (ids.calcRegion) ids.calcRegion.addEventListener("change", function (event) { syncRegion(event.target.value); });
+  if (ids.formRegion) ids.formRegion.addEventListener("change", function (event) { syncRegion(event.target.value); });
+  if (ids.solutionType) ids.solutionType.addEventListener("change", updatePrice);
+  if (ids.complexity) ids.complexity.addEventListener("change", updatePrice);
+  if (ids.support) ids.support.addEventListener("change", updatePrice);
+  bindChannelEvents();
+
+  if (ids.menuToggle && ids.nav && ids.headerActions) {
+    ids.menuToggle.addEventListener("click", function () {
+      var expanded = ids.menuToggle.getAttribute("aria-expanded") === "true";
+      ids.menuToggle.setAttribute("aria-expanded", expanded ? "false" : "true");
+      ids.nav.classList.toggle("is-open");
+      ids.headerActions.classList.toggle("is-open");
+    });
+  }
+
+  var anchors = document.querySelectorAll("a[href^='#']");
+  for (var i = 0; i < anchors.length; i += 1) anchors[i].addEventListener("click", closeMenu);
+
+  var form = document.querySelector(".contact-form");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var button = event.currentTarget.querySelector("button");
+      if (!button) return;
+      var original = button.textContent;
+      button.textContent = "Request prepared";
+      setTimeout(function () {
+        button.textContent = original;
+        event.currentTarget.reset();
+        if (ids.formRegion) ids.formRegion.value = state.region;
+      }, 1800);
+    });
+  }
 }
 
 bindEvents();
