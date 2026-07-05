@@ -205,6 +205,13 @@ function syncRegion(region) {
 }
 
 function observeReveals() {
+  const revealItems = document.querySelectorAll(".reveal:not(.is-visible)");
+
+  if (!("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+    return;
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -216,7 +223,11 @@ function observeReveals() {
     },
     { threshold: 0.12 }
   );
-  document.querySelectorAll(".reveal:not(.is-visible)").forEach((item) => observer.observe(item));
+
+  revealItems.forEach((item) => {
+    item.classList.add("can-reveal");
+    observer.observe(item);
+  });
 }
 
 function bindEvents() {
