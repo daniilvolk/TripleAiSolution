@@ -68,9 +68,9 @@ textarea {
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: auto minmax(280px, 1fr) auto;
+  grid-template-columns: auto auto minmax(0, 1fr);
   align-items: center;
-  gap: 18px;
+  gap: 22px;
   width: min(1260px, calc(100% - 32px));
   margin: 16px auto 0;
   padding: 12px;
@@ -156,12 +156,13 @@ textarea {
 .header-actions {
   align-items: center;
   justify-content: flex-end;
+  justify-self: end;
   gap: 12px;
   margin-block-start: 0;
 }
 
 .site-nav {
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .switch-group {
