@@ -23,8 +23,8 @@ var complexityMultiplier = { basic: 1, standard: 1.35, advanced: 1.85 };
 var channelPrice = { moldova: 70, israel: 350, international: 120 };
 
 var ids = {
-  language: document.getElementById("languageSelect"),
-  region: document.getElementById("regionSelect"),
+  languageButtons: document.querySelectorAll("[data-language]"),
+  regionButtons: document.querySelectorAll("[data-region]"),
   calcRegion: document.getElementById("calcRegion"),
   formRegion: document.getElementById("formRegion"),
   solutionType: document.getElementById("solutionType"),
@@ -134,6 +134,7 @@ function applyTranslations() {
   renderIndustries();
   renderProcess();
   renderCalculatorOptions();
+  updateHeaderControls();
 }
 
 function renderValuePoints() {
@@ -225,7 +226,6 @@ function renderCalculatorOptions() {
   var selectedComplexity = ids.complexity && ids.complexity.value ? ids.complexity.value : "basic";
   var selectedSupport = ids.support && ids.support.value ? ids.support.value : "basic";
 
-  setOptions(ids.region, t("pricing.regions"), state.region);
   setOptions(ids.calcRegion, t("pricing.regions"), state.region);
   setOptions(ids.formRegion, t("pricing.regions"), state.region);
   setOptions(ids.solutionType, t("pricing.solutions"), selectedSolution);
@@ -293,10 +293,28 @@ function formatPrice(value, regionPricing) {
 function syncRegion(region) {
   state.region = region || "international";
   setStored("triple-ai-region", state.region);
-  if (ids.region) ids.region.value = state.region;
   if (ids.calcRegion) ids.calcRegion.value = state.region;
   if (ids.formRegion) ids.formRegion.value = state.region;
+  updateHeaderControls();
   updatePrice();
+}
+
+function updateHeaderControls() {
+  for (var i = 0; i < ids.languageButtons.length; i += 1) {
+    var languageButton = ids.languageButtons[i];
+    var language = languageButton.getAttribute("data-language");
+    var activeLanguage = language === state.language;
+    languageButton.classList.toggle("is-active", activeLanguage);
+    languageButton.setAttribute("aria-pressed", activeLanguage ? "true" : "false");
+  }
+
+  for (var j = 0; j < ids.regionButtons.length; j += 1) {
+    var regionButton = ids.regionButtons[j];
+    var region = regionButton.getAttribute("data-region");
+    var activeRegion = region === state.region;
+    regionButton.classList.toggle("is-active", activeRegion);
+    regionButton.setAttribute("aria-pressed", activeRegion ? "true" : "false");
+  }
 }
 
 function observeReveals() {
@@ -330,18 +348,18 @@ function closeMenu() {
 }
 
 function bindEvents() {
-  if (ids.language) {
-    ids.language.value = state.language;
-    ids.language.addEventListener("change", function (event) {
-      state.language = event.target.value;
+  for (var languageIndex = 0; languageIndex < ids.languageButtons.length; languageIndex += 1) {
+    ids.languageButtons[languageIndex].addEventListener("click", function (event) {
+      state.language = event.currentTarget.getAttribute("data-language") || "en";
       setStored("triple-ai-language", state.language);
       applyTranslations();
     });
   }
 
-  if (ids.region) {
-    ids.region.value = state.region;
-    ids.region.addEventListener("change", function (event) { syncRegion(event.target.value); });
+  for (var regionIndex = 0; regionIndex < ids.regionButtons.length; regionIndex += 1) {
+    ids.regionButtons[regionIndex].addEventListener("click", function (event) {
+      syncRegion(event.currentTarget.getAttribute("data-region"));
+    });
   }
   if (ids.calcRegion) ids.calcRegion.addEventListener("change", function (event) { syncRegion(event.target.value); });
   if (ids.formRegion) ids.formRegion.addEventListener("change", function (event) { syncRegion(event.target.value); });

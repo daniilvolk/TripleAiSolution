@@ -8,9 +8,9 @@
       content="Triple AI Solutions builds AI employees and automation systems for customer communication, sales, support, calls, and business operations in Moldova, Israel, and international markets."
     />
     <title>Triple AI Solutions | AI Employees for Business Growth</title>
-    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png?v=20260706-1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20260706-1" />
-    <link rel="stylesheet" href="styles.css?v=20260706-1" />
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon.png?v=20260706-2" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=20260706-2" />
+    <link rel="stylesheet" href="styles.css?v=20260706-2" />
   </head>
   <body>
     <div class="page-shell">
@@ -35,23 +35,23 @@
         </nav>
 
         <div class="header-actions">
-          <label class="select-wrap control-language">
+          <div class="switch-group language-switch">
             <span data-i18n="labels.language">Language</span>
-            <select id="languageSelect" aria-label="Language">
-              <option value="en">EN</option>
-              <option value="ro">RO</option>
-              <option value="ru">RU</option>
-              <option value="he">HE</option>
-            </select>
-          </label>
-          <label class="select-wrap control-region">
+            <div class="language-grid" id="languageSwitch" role="group" aria-label="Language">
+              <button type="button" data-language="en">EN</button>
+              <button type="button" data-language="ru">RU</button>
+              <button type="button" data-language="ro">RO</button>
+              <button type="button" data-language="he">HE</button>
+            </div>
+          </div>
+          <div class="switch-group region-switch">
             <span data-i18n="labels.region">Region</span>
-            <select id="regionSelect" aria-label="Region">
-              <option value="moldova">Moldova</option>
-              <option value="israel">Israel</option>
-              <option value="international">International</option>
-            </select>
-          </label>
+            <div class="region-grid" id="regionSwitch" role="group" aria-label="Region">
+              <button type="button" data-region="moldova" aria-label="Moldova"><span>🇲🇩</span></button>
+              <button type="button" data-region="israel" aria-label="Israel"><span>🇮🇱</span></button>
+              <button type="button" data-region="international" aria-label="International"><span>🌍</span></button>
+            </div>
+          </div>
           <a class="btn btn-primary btn-small" href="#contact" data-i18n="cta.book">Book Free Consultation</a>
         </div>
       </header>
@@ -298,7 +298,7 @@
       </footer>
     </div>
 
-    <script src="translations.js?v=20260706-1"></script>
-    <script src="script.js?v=20260706-1"></script>
+    <script src="translations.js?v=20260706-2"></script>
+    <script src="script.js?v=20260706-2"></script>
   </body>
 </html>
