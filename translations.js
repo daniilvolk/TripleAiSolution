@@ -1,9 +1,9 @@
 var TRANSLATIONS = {
   en: {
     meta: {
-      title: "Triple AI Solutions | AI Employees for Business Growth",
+      title: "Triple AI Solution | AI Employees for Business Growth",
       description:
-        "Triple AI Solutions builds AI employees and automation systems for communication, sales, support, calls, and operations in Moldova, Israel, and international markets.",
+        "Triple AI Solution builds AI employees and automation systems for communication, sales, support, calls, and operations in Moldova, Israel, and international markets.",
     },
     nav: { home: "Home", solutions: "Solutions", industries: "Industries", pricing: "Pricing", why: "Why Us", contact: "Contact" },
     labels: { language: "Language", region: "Region" },
@@ -12,7 +12,7 @@ var TRANSLATIONS = {
       eyebrow: "AI automation for growth-focused companies",
       title: "AI Employees That Help Businesses Grow",
       subtitle:
-        "Triple AI Solutions develops intelligent AI employees that automate customer communication, sales, support, and business operations. We help companies in Moldova, Israel, and international markets reduce costs, increase efficiency, and improve customer experience through artificial intelligence.",
+        "Triple AI Solution develops intelligent AI employees that automate customer communication, sales, support, and business operations. We help companies in Moldova, Israel, and international markets reduce costs, increase efficiency, and improve customer experience through artificial intelligence.",
       values: [
         "Reduce support staff costs by up to 70%",
         "Never miss a customer call again",
@@ -68,14 +68,14 @@ var TRANSLATIONS = {
     comparison: {
       eyebrow: "Comparison",
       title: "A calmer way to scale customer operations",
-      withTitle: "With Triple AI Solutions",
+      withTitle: "With Triple AI Solution",
       withoutTitle: "Traditional staff only",
       with: ["24/7 instant response", "Fixed predictable monthly cost", "No missed calls", "Multilingual support", "CRM and automation integrations", "Follow-up without human effort", "Scales instantly"],
       without: ["Missed calls after working hours", "Salaries, training, vacations, sick days", "Human errors", "Limited parallel conversations", "Hard to scale", "No automatic analytics"],
     },
     why: {
       eyebrow: "Trust layer",
-      title: "Why Triple AI Solutions?",
+      title: "Why Triple AI Solution?",
       subtitle: "We do not sell generic bots. We design AI employees around your real business process, your language, your customers, and your tools.",
       items: ["Custom-built AI", "Business-first approach", "Secure infrastructure", "Enterprise integrations", "Fast deployment", "Ongoing optimization", "Human support", "Multilingual by default"],
     },
@@ -138,14 +138,14 @@ var TRANSLATIONS = {
     form: { name: "Name", phone: "Phone / WhatsApp", email: "Email", company: "Company", region: "Region", automation: "What do you want to automate?", submit: "Send Request" },
   },
   ro: {
-    meta: { title: "Triple AI Solutions | Angajati AI pentru cresterea afacerii", description: "Automatizari AI si angajati AI pentru comunicare, vanzari, suport, apeluri si operatiuni." },
+    meta: { title: "Triple AI Solution | Angajati AI pentru cresterea afacerii", description: "Automatizari AI si angajati AI pentru comunicare, vanzari, suport, apeluri si operatiuni." },
     nav: { home: "Acasa", solutions: "Solutii", industries: "Industrii", pricing: "Preturi", why: "De ce noi", contact: "Contact" },
     labels: { language: "Limba", region: "Regiune" },
     cta: { book: "Consultatie gratuita", bookShort: "Programeaza consultatia", demo: "Demo live" },
     hero: {
       eyebrow: "Automatizare AI pentru companii in crestere",
       title: "Angajati AI care ajuta afacerile sa creasca",
-      subtitle: "Triple AI Solutions dezvolta angajati AI inteligenti care automatizeaza comunicarea cu clientii, vanzarile, suportul si operatiunile. Ajutam companii din Moldova, Israel si piete internationale sa reduca costurile si sa imbunatateasca experienta clientilor.",
+      subtitle: "Triple AI Solution dezvolta angajati AI inteligenti care automatizeaza comunicarea cu clientii, vanzarile, suportul si operatiunile. Ajutam companii din Moldova, Israel si piete internationale sa reduca costurile si sa imbunatateasca experienta clientilor.",
       values: ["Reduceti costurile de suport cu pana la 70%", "Nu mai pierdeti niciun apel", "Angajatii AI vorbesc engleza, romana, rusa si ebraica", "Gestionati de 3x mai multe cereri fara angajari noi"],
     },
     visual: { status: "Angajat AI online", live: "Live", incoming: "Apeluri primite", response: "Raspuns mediu", automation: "Automatizat", signals: ["Mesaje WhatsApp", "Actualizari CRM", "Programari", "Analitica saptamanala"] },
@@ -162,8 +162,8 @@ var TRANSLATIONS = {
         { title: "Asistenti AI custom", description: "Asistenti AI pentru medici, manageri, echipe de vanzari, suport si afaceri locale.", features: ["Scripturi pe rol", "Baza de cunostinte", "Acces la instrumente", "Comportament pe workflow"] },
       ],
     },
-    comparison: { eyebrow: "Comparatie", title: "O metoda mai calma de a scala operatiunile cu clientii", withTitle: "Cu Triple AI Solutions", withoutTitle: "Doar personal traditional", with: ["Raspuns instant 24/7", "Cost lunar predictibil", "Fara apeluri pierdute", "Suport multilingv", "Integrari CRM si automatizari", "Follow-up fara efort uman", "Scalare instantanee"], without: ["Apeluri pierdute dupa program", "Salarii, training, concedii, medicale", "Erori umane", "Conversatii paralele limitate", "Scalare dificila", "Fara analitica automata"] },
-    why: { eyebrow: "Incredere", title: "De ce Triple AI Solutions?", subtitle: "Nu vindem boti generici. Proiectam angajati AI in jurul procesului tau real, limbii, clientilor si instrumentelor tale.", items: ["AI construit custom", "Abordare business-first", "Infrastructura sigura", "Integrari enterprise", "Implementare rapida", "Optimizare continua", "Suport uman", "Multilingv implicit"] },
+    comparison: { eyebrow: "Comparatie", title: "O metoda mai calma de a scala operatiunile cu clientii", withTitle: "Cu Triple AI Solution", withoutTitle: "Doar personal traditional", with: ["Raspuns instant 24/7", "Cost lunar predictibil", "Fara apeluri pierdute", "Suport multilingv", "Integrari CRM si automatizari", "Follow-up fara efort uman", "Scalare instantanee"], without: ["Apeluri pierdute dupa program", "Salarii, training, concedii, medicale", "Erori umane", "Conversatii paralele limitate", "Scalare dificila", "Fara analitica automata"] },
+    why: { eyebrow: "Incredere", title: "De ce Triple AI Solution?", subtitle: "Nu vindem boti generici. Proiectam angajati AI in jurul procesului tau real, limbii, clientilor si instrumentelor tale.", items: ["AI construit custom", "Abordare business-first", "Infrastructura sigura", "Integrari enterprise", "Implementare rapida", "Optimizare continua", "Suport uman", "Multilingv implicit"] },
     industries: { eyebrow: "Industrii", title: "Creat pentru businessuri cu multe interactiuni", items: [["Clinici dentare", "Programari, intrebari despre tratamente si mai putine apeluri pierdute."], ["Clinici beauty si estetica", "Califica lead-uri, trimite remindere si umple locuri libere."], ["Restaurante", "Rezervari, meniuri, evenimente si apeluri in ore aglomerate."], ["E-commerce", "Intrebari despre produse, status comenzi si cosuri abandonate."], ["Servicii locale", "Captureaza lead-uri, estimeaza cereri si trimite joburi urgente."], ["Imobiliare", "Califica cumparatori, programeaza vizionari si trimite detalii."], ["Logistica", "Automatizeaza statusuri, formulare si notificari clienti."], ["Echipe suport", "Rezolva FAQ si routeaza cazuri complexe cu context."]] },
     pricing: {
       eyebrow: "Preturi", title: "Estimeaza investitia in automatizare AI", subtitle: "Calculatorul ofera un punct de pornire. Pretul final depinde de canale, integrari, limbi si complexitate.", region: "Regiune", solution: "Tip solutie", channels: "Canale", complexity: "Complexitate", support: "Suport lunar", result: "Estimare initiala", setup: "Pret setup", monthly: "Suport lunar", note: "De la. Oferta exacta dupa analiza procesului.", cta: "Cere oferta exacta",
@@ -180,14 +180,14 @@ var TRANSLATIONS = {
     form: { name: "Nume", phone: "Telefon / WhatsApp", email: "Email", company: "Companie", region: "Regiune", automation: "Ce vrei sa automatizezi?", submit: "Trimite cererea" },
   },
   ru: {
-    meta: { title: "Triple AI Solutions | AI-сотрудники для роста бизнеса", description: "AI-автоматизации и AI-сотрудники для коммуникации, продаж, поддержки, звонков и бизнес-процессов." },
+    meta: { title: "Triple AI Solution | AI-сотрудники для роста бизнеса", description: "AI-автоматизации и AI-сотрудники для коммуникации, продаж, поддержки, звонков и бизнес-процессов." },
     nav: { home: "Главная", solutions: "Решения", industries: "Отрасли", pricing: "Цены", why: "Почему мы", contact: "Контакты" },
     labels: { language: "Язык", region: "Регион" },
     cta: { book: "Бесплатная консультация", bookShort: "Записаться на консультацию", demo: "Запланировать демо" },
     hero: {
       eyebrow: "AI-автоматизация для растущих компаний",
       title: "AI-сотрудники, которые помогают бизнесу расти",
-      subtitle: "Triple AI Solutions разрабатывает интеллектуальных AI-сотрудников, которые автоматизируют коммуникацию с клиентами, продажи, поддержку и бизнес-процессы. Мы помогаем компаниям в Молдове, Израиле и на международных рынках снижать расходы и улучшать клиентский опыт.",
+      subtitle: "Triple AI Solution разрабатывает интеллектуальных AI-сотрудников, которые автоматизируют коммуникацию с клиентами, продажи, поддержку и бизнес-процессы. Мы помогаем компаниям в Молдове, Израиле и на международных рынках снижать расходы и улучшать клиентский опыт.",
       values: ["Снижение затрат на поддержку до 70%", "Ни один звонок клиента не потеряется", "AI-сотрудники говорят на английском, румынском, русском и иврите", "Обрабатывайте в 3 раза больше запросов без найма"],
     },
     visual: { status: "AI-сотрудник онлайн", live: "Live", incoming: "Входящие звонки", response: "Средний ответ", automation: "Автоматизировано", signals: ["Сообщения WhatsApp", "Обновления CRM", "Записи на приём", "Еженедельная аналитика"] },
@@ -204,8 +204,8 @@ var TRANSLATIONS = {
         { title: "Индивидуальные AI-ассистенты", description: "AI-ассистенты для врачей, менеджеров, продаж, поддержки и локального бизнеса.", features: ["Сценарии под роль", "Своя база знаний", "Доступ к инструментам", "Поведение под workflow"] },
       ],
     },
-    comparison: { eyebrow: "Сравнение", title: "Более спокойный способ масштабировать клиентские операции", withTitle: "С Triple AI Solutions", withoutTitle: "Только традиционный персонал", with: ["Мгновенный ответ 24/7", "Предсказуемая ежемесячная стоимость", "Без пропущенных звонков", "Многоязычная поддержка", "CRM и автоматизации", "Follow-up без ручной работы", "Масштабирование сразу"], without: ["Пропущенные звонки после рабочего дня", "Зарплаты, обучение, отпуска, больничные", "Человеческие ошибки", "Ограниченные параллельные диалоги", "Сложно масштабировать", "Нет автоматической аналитики"] },
-    why: { eyebrow: "Доверие", title: "Почему Triple AI Solutions?", subtitle: "Мы не продаём generic-ботов. Мы проектируем AI-сотрудников вокруг ваших реальных процессов, языка, клиентов и инструментов.", items: ["Индивидуальная AI-разработка", "Business-first подход", "Безопасная инфраструктура", "Enterprise-интеграции", "Быстрый запуск", "Постоянная оптимизация", "Поддержка людей", "Мультиязычность по умолчанию"] },
+    comparison: { eyebrow: "Сравнение", title: "Более спокойный способ масштабировать клиентские операции", withTitle: "С Triple AI Solution", withoutTitle: "Только традиционный персонал", with: ["Мгновенный ответ 24/7", "Предсказуемая ежемесячная стоимость", "Без пропущенных звонков", "Многоязычная поддержка", "CRM и автоматизации", "Follow-up без ручной работы", "Масштабирование сразу"], without: ["Пропущенные звонки после рабочего дня", "Зарплаты, обучение, отпуска, больничные", "Человеческие ошибки", "Ограниченные параллельные диалоги", "Сложно масштабировать", "Нет автоматической аналитики"] },
+    why: { eyebrow: "Доверие", title: "Почему Triple AI Solution?", subtitle: "Мы не продаём generic-ботов. Мы проектируем AI-сотрудников вокруг ваших реальных процессов, языка, клиентов и инструментов.", items: ["Индивидуальная AI-разработка", "Business-first подход", "Безопасная инфраструктура", "Enterprise-интеграции", "Быстрый запуск", "Постоянная оптимизация", "Поддержка людей", "Мультиязычность по умолчанию"] },
     industries: { eyebrow: "Отрасли", title: "Для бизнесов с большим количеством обращений", items: [["Стоматологии", "Запись, ответы на FAQ и меньше пропущенных звонков."], ["Beauty и эстетические клиники", "Квалификация лидов, напоминания и заполнение окон."], ["Рестораны", "Бронирования, меню, мероприятия и звонки в пиковые часы."], ["E-commerce", "Вопросы по товарам, статус заказов и возврат корзин."], ["Локальные услуги", "Сбор лидов, оценка заявок и срочные выезды."], ["Недвижимость", "Квалификация покупателей, показы и отправка объектов."], ["Логистика", "Статусы, формы и уведомления клиентов."], ["Команды поддержки", "FAQ и маршрутизация сложных кейсов с контекстом."]] },
     pricing: {
       eyebrow: "Цены", title: "Оцените инвестицию в AI-автоматизацию", subtitle: "Калькулятор даёт понятную стартовую оценку. Финальная цена зависит от каналов, интеграций, языков и сложности.", region: "Регион", solution: "Тип решения", channels: "Каналы", complexity: "Сложность", support: "Ежемесячная поддержка", result: "Стартовая оценка", setup: "Стоимость запуска", monthly: "Поддержка в месяц", note: "Starting from. Точная смета после анализа процесса.", cta: "Запросить точную смету",
@@ -222,14 +222,14 @@ var TRANSLATIONS = {
     form: { name: "Имя", phone: "Телефон / WhatsApp", email: "Email", company: "Компания", region: "Регион", automation: "Что вы хотите автоматизировать?", submit: "Отправить заявку" },
   },
   he: {
-    meta: { title: "Triple AI Solutions | עובדי AI לצמיחה עסקית", description: "אוטומציות AI ועובדי AI לתקשורת, מכירות, תמיכה, שיחות ותהליכים עסקיים." },
+    meta: { title: "Triple AI Solution | עובדי AI לצמיחה עסקית", description: "אוטומציות AI ועובדי AI לתקשורת, מכירות, תמיכה, שיחות ותהליכים עסקיים." },
     nav: { home: "בית", solutions: "פתרונות", industries: "ענפים", pricing: "מחירים", why: "למה אנחנו", contact: "יצירת קשר" },
     labels: { language: "שפה", region: "אזור" },
     cta: { book: "ייעוץ חינם", bookShort: "קבעו ייעוץ חינם", demo: "קבעו דמו חי" },
     hero: {
       eyebrow: "אוטומציית AI לחברות בצמיחה",
       title: "עובדי AI שעוזרים לעסק לצמוח",
-      subtitle: "Triple AI Solutions מפתחת עובדי AI חכמים שמבצעים אוטומציה לתקשורת עם לקוחות, מכירות, תמיכה ותהליכים עסקיים. אנחנו עוזרים לחברות במולדובה, ישראל ושווקים בינלאומיים להוריד עלויות, להגדיל יעילות ולשפר חוויית לקוח.",
+      subtitle: "Triple AI Solution מפתחת עובדי AI חכמים שמבצעים אוטומציה לתקשורת עם לקוחות, מכירות, תמיכה ותהליכים עסקיים. אנחנו עוזרים לחברות במולדובה, ישראל ושווקים בינלאומיים להוריד עלויות, להגדיל יעילות ולשפר חוויית לקוח.",
       values: ["הפחתת עלויות תמיכה עד 70%", "לא מפספסים יותר שיחות לקוח", "עובדי AI מדברים אנגלית, רומנית, רוסית ועברית", "מטפלים פי 3 ביותר פניות בלי לגייס עוד עובדים"],
     },
     visual: { status: "עובד AI פעיל", live: "חי", incoming: "שיחות נכנסות", response: "זמן תגובה ממוצע", automation: "אוטומטי", signals: ["הודעות WhatsApp", "עדכוני CRM", "קביעת תורים", "אנליטיקה שבועית"] },
@@ -246,8 +246,8 @@ var TRANSLATIONS = {
         { title: "עוזרי AI מותאמים", description: "עוזרי AI לרופאים, מנהלים, צוותי מכירות, תמיכה ועסקים מקומיים.", features: ["תסריטים לפי תפקיד", "בסיס ידע מותאם", "גישה לכלים", "התנהגות לפי תהליך"] },
       ],
     },
-    comparison: { eyebrow: "השוואה", title: "דרך רגועה יותר להרחיב תפעול מול לקוחות", withTitle: "עם Triple AI Solutions", withoutTitle: "רק צוות מסורתי", with: ["תגובה מיידית 24/7", "עלות חודשית צפויה", "בלי שיחות מפוספסות", "תמיכה רב-לשונית", "אינטגרציות CRM ואוטומציה", "פולואפ ללא מאמץ אנושי", "סקייל מיידי"], without: ["שיחות מפוספסות אחרי שעות העבודה", "משכורות, הדרכות, חופשות ומחלות", "טעויות אנוש", "מספר שיחות מקביל מוגבל", "קשה להרחיב", "אין אנליטיקה אוטומטית"] },
-    why: { eyebrow: "אמון", title: "למה Triple AI Solutions?", subtitle: "אנחנו לא מוכרים בוטים גנריים. אנחנו מתכננים עובדי AI סביב התהליך העסקי, השפה, הלקוחות והכלים שלכם.", items: ["AI מותאם אישית", "גישה עסקית קודם", "תשתית מאובטחת", "אינטגרציות Enterprise", "הטמעה מהירה", "אופטימיזציה מתמשכת", "תמיכה אנושית", "רב-לשוני כברירת מחדל"] },
+    comparison: { eyebrow: "השוואה", title: "דרך רגועה יותר להרחיב תפעול מול לקוחות", withTitle: "עם Triple AI Solution", withoutTitle: "רק צוות מסורתי", with: ["תגובה מיידית 24/7", "עלות חודשית צפויה", "בלי שיחות מפוספסות", "תמיכה רב-לשונית", "אינטגרציות CRM ואוטומציה", "פולואפ ללא מאמץ אנושי", "סקייל מיידי"], without: ["שיחות מפוספסות אחרי שעות העבודה", "משכורות, הדרכות, חופשות ומחלות", "טעויות אנוש", "מספר שיחות מקביל מוגבל", "קשה להרחיב", "אין אנליטיקה אוטומטית"] },
+    why: { eyebrow: "אמון", title: "למה Triple AI Solution?", subtitle: "אנחנו לא מוכרים בוטים גנריים. אנחנו מתכננים עובדי AI סביב התהליך העסקי, השפה, הלקוחות והכלים שלכם.", items: ["AI מותאם אישית", "גישה עסקית קודם", "תשתית מאובטחת", "אינטגרציות Enterprise", "הטמעה מהירה", "אופטימיזציה מתמשכת", "תמיכה אנושית", "רב-לשוני כברירת מחדל"] },
     industries: { eyebrow: "ענפים", title: "מתאים לעסקים עם הרבה אינטראקציות", items: [["מרפאות שיניים", "קביעת תורים, FAQ ופחות שיחות מפוספסות."], ["קליניקות יופי ואסתטיקה", "סינון לידים, תזכורות ומילוי חלונות פנויים."], ["מסעדות", "הזמנות, תפריטים, אירועים ושיחות בשעות עומס."], ["E-commerce", "שאלות מוצר, סטטוס הזמנות ושחזור עגלות."], ["עסקי שירות מקומיים", "איסוף לידים, הערכת פניות ושיגור עבודות דחופות."], ["נדל\"ן", "סינון קונים, תיאום סיורים ושליחת נכסים."], ["לוגיסטיקה", "סטטוסים, טפסים והתראות ללקוחות."], ["צוותי תמיכה", "פתרון FAQ וניתוב מקרים מורכבים עם הקשר."]] },
     pricing: {
       eyebrow: "מחירים", title: "העריכו את ההשקעה באוטומציית AI", subtitle: "המחירון נותן נקודת התחלה. המחיר הסופי תלוי בערוצים, אינטגרציות, שפות ומורכבות.", region: "אזור", solution: "סוג פתרון", channels: "ערוצים", complexity: "מורכבות", support: "תמיכה חודשית", result: "הערכה התחלתית", setup: "עלות הקמה", monthly: "תמיכה חודשית", note: "החל מ-. הצעת מחיר מדויקת אחרי ניתוח תהליך.", cta: "בקשת הצעת מחיר",
