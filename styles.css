@@ -124,11 +124,12 @@ textarea {
 .header-actions {
   align-items: flex-end;
   gap: 10px;
+  margin-block-start: 4px;
 }
 
 .switch-group {
   display: grid;
-  gap: 6px;
+  gap: 5px;
 }
 
 .switch-group > span {
@@ -156,7 +157,7 @@ textarea {
 }
 
 .region-grid {
-  grid-template-columns: repeat(3, 40px);
+  grid-template-columns: repeat(4, 36px);
 }
 
 .language-grid button,
@@ -307,6 +308,7 @@ textarea {
   min-height: 40px;
   padding-inline: 14px;
   font-size: 0.88rem;
+  margin-block-end: 4px;
 }
 
 .menu-toggle {

@@ -11,6 +11,12 @@ var pricing = {
     setup: { chatbot: 1800, automation: 3000, integrations: 2500, voice: 4500, full: 7600 },
     support: { none: 0, basic: 650, growth: 1200, premium: 2200 },
   },
+  dubai: {
+    currency: "$",
+    suffix: "",
+    setup: { chatbot: 900, automation: 1400, integrations: 1100, voice: 1800, full: 3200 },
+    support: { none: 0, basic: 350, growth: 700, premium: 1200 },
+  },
   international: {
     currency: "\u20ac",
     suffix: "",
@@ -20,7 +26,7 @@ var pricing = {
 };
 
 var complexityMultiplier = { basic: 1, standard: 1.35, advanced: 1.85 };
-var channelPrice = { moldova: 70, israel: 350, international: 120 };
+var channelPrice = { moldova: 70, israel: 350, dubai: 180, international: 120 };
 
 var ids = {
   languageButtons: document.querySelectorAll("[data-language]"),
@@ -76,6 +82,7 @@ function detectRegion() {
   } catch (error) {}
 
   var locale = ((navigator.language || "") + " " + timezone).toLowerCase();
+  if (locale.indexOf("dubai") !== -1 || locale.indexOf("abu_dhabi") !== -1 || locale.indexOf("united arab emirates") !== -1 || locale.indexOf("-ae") !== -1) return "dubai";
   if (locale.indexOf("israel") !== -1 || locale.indexOf("jerusalem") !== -1 || locale.indexOf("-il") !== -1 || locale.slice(-2) === "he") return "israel";
   if (locale.indexOf("chisinau") !== -1 || locale.indexOf("moldova") !== -1 || locale.indexOf("-md") !== -1 || locale.indexOf("ro") !== -1) return "moldova";
   return "international";

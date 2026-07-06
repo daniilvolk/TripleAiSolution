@@ -107,7 +107,7 @@ var TRANSLATIONS = {
       monthly: "Monthly support",
       note: "Starting from. Exact quote after process analysis.",
       cta: "Request Exact Quote",
-      regions: { moldova: "Moldova", israel: "Israel", international: "International" },
+      regions: { moldova: "Moldova", israel: "Israel", dubai: "Dubai / UAE", international: "International" },
       solutions: { chatbot: "Chatbot", voice: "Voice AI", automation: "Business automation", integrations: "Integrations", full: "Full AI employee system" },
       channelsList: { website: "Website", whatsapp: "WhatsApp", telegram: "Telegram", instagram: "Instagram", phone: "Phone calls", crm: "CRM" },
       complexities: { basic: "Basic", standard: "Standard", advanced: "Advanced" },
@@ -167,7 +167,7 @@ var TRANSLATIONS = {
     industries: { eyebrow: "Industrii", title: "Creat pentru businessuri cu multe interactiuni", items: [["Clinici dentare", "Programari, intrebari despre tratamente si mai putine apeluri pierdute."], ["Clinici beauty si estetica", "Califica lead-uri, trimite remindere si umple locuri libere."], ["Restaurante", "Rezervari, meniuri, evenimente si apeluri in ore aglomerate."], ["E-commerce", "Intrebari despre produse, status comenzi si cosuri abandonate."], ["Servicii locale", "Captureaza lead-uri, estimeaza cereri si trimite joburi urgente."], ["Imobiliare", "Califica cumparatori, programeaza vizionari si trimite detalii."], ["Logistica", "Automatizeaza statusuri, formulare si notificari clienti."], ["Echipe suport", "Rezolva FAQ si routeaza cazuri complexe cu context."]] },
     pricing: {
       eyebrow: "Preturi", title: "Estimeaza investitia in automatizare AI", subtitle: "Calculatorul ofera un punct de pornire. Pretul final depinde de canale, integrari, limbi si complexitate.", region: "Regiune", solution: "Tip solutie", channels: "Canale", complexity: "Complexitate", support: "Suport lunar", result: "Estimare initiala", setup: "Pret setup", monthly: "Suport lunar", note: "De la. Oferta exacta dupa analiza procesului.", cta: "Cere oferta exacta",
-      regions: { moldova: "Moldova", israel: "Israel", international: "International" },
+      regions: { moldova: "Moldova", israel: "Israel", dubai: "Dubai / UAE", international: "International" },
       solutions: { chatbot: "Chatbot", voice: "Voice AI", automation: "Automatizare business", integrations: "Integrari", full: "Sistem complet AI employee" },
       channelsList: { website: "Website", whatsapp: "WhatsApp", telegram: "Telegram", instagram: "Instagram", phone: "Apeluri", crm: "CRM" },
       complexities: { basic: "Basic", standard: "Standard", advanced: "Advanced" },
@@ -209,7 +209,7 @@ var TRANSLATIONS = {
     industries: { eyebrow: "Отрасли", title: "Для бизнесов с большим количеством обращений", items: [["Стоматологии", "Запись, ответы на FAQ и меньше пропущенных звонков."], ["Beauty и эстетические клиники", "Квалификация лидов, напоминания и заполнение окон."], ["Рестораны", "Бронирования, меню, мероприятия и звонки в пиковые часы."], ["E-commerce", "Вопросы по товарам, статус заказов и возврат корзин."], ["Локальные услуги", "Сбор лидов, оценка заявок и срочные выезды."], ["Недвижимость", "Квалификация покупателей, показы и отправка объектов."], ["Логистика", "Статусы, формы и уведомления клиентов."], ["Команды поддержки", "FAQ и маршрутизация сложных кейсов с контекстом."]] },
     pricing: {
       eyebrow: "Цены", title: "Оцените инвестицию в AI-автоматизацию", subtitle: "Калькулятор даёт понятную стартовую оценку. Финальная цена зависит от каналов, интеграций, языков и сложности.", region: "Регион", solution: "Тип решения", channels: "Каналы", complexity: "Сложность", support: "Ежемесячная поддержка", result: "Стартовая оценка", setup: "Стоимость запуска", monthly: "Поддержка в месяц", note: "Starting from. Точная смета после анализа процесса.", cta: "Запросить точную смету",
-      regions: { moldova: "Молдова", israel: "Израиль", international: "Международный" },
+      regions: { moldova: "Молдова", israel: "Израиль", dubai: "Дубай / ОАЭ", international: "Международный" },
       solutions: { chatbot: "Чатбот", voice: "Voice AI", automation: "Автоматизация бизнеса", integrations: "Интеграции", full: "Полная система AI-сотрудника" },
       channelsList: { website: "Сайт", whatsapp: "WhatsApp", telegram: "Telegram", instagram: "Instagram", phone: "Звонки", crm: "CRM" },
       complexities: { basic: "Basic", standard: "Standard", advanced: "Advanced" },
@@ -251,7 +251,7 @@ var TRANSLATIONS = {
     industries: { eyebrow: "ענפים", title: "מתאים לעסקים עם הרבה אינטראקציות", items: [["מרפאות שיניים", "קביעת תורים, FAQ ופחות שיחות מפוספסות."], ["קליניקות יופי ואסתטיקה", "סינון לידים, תזכורות ומילוי חלונות פנויים."], ["מסעדות", "הזמנות, תפריטים, אירועים ושיחות בשעות עומס."], ["E-commerce", "שאלות מוצר, סטטוס הזמנות ושחזור עגלות."], ["עסקי שירות מקומיים", "איסוף לידים, הערכת פניות ושיגור עבודות דחופות."], ["נדל\"ן", "סינון קונים, תיאום סיורים ושליחת נכסים."], ["לוגיסטיקה", "סטטוסים, טפסים והתראות ללקוחות."], ["צוותי תמיכה", "פתרון FAQ וניתוב מקרים מורכבים עם הקשר."]] },
     pricing: {
       eyebrow: "מחירים", title: "העריכו את ההשקעה באוטומציית AI", subtitle: "המחירון נותן נקודת התחלה. המחיר הסופי תלוי בערוצים, אינטגרציות, שפות ומורכבות.", region: "אזור", solution: "סוג פתרון", channels: "ערוצים", complexity: "מורכבות", support: "תמיכה חודשית", result: "הערכה התחלתית", setup: "עלות הקמה", monthly: "תמיכה חודשית", note: "החל מ-. הצעת מחיר מדויקת אחרי ניתוח תהליך.", cta: "בקשת הצעת מחיר",
-      regions: { moldova: "מולדובה", israel: "ישראל", international: "בינלאומי" },
+      regions: { moldova: "מולדובה", israel: "ישראל", dubai: "דובאי / איחוד האמירויות", international: "בינלאומי" },
       solutions: { chatbot: "צ'אטבוט", voice: "Voice AI", automation: "אוטומציה עסקית", integrations: "אינטגרציות", full: "מערכת AI employee מלאה" },
       channelsList: { website: "אתר", whatsapp: "WhatsApp", telegram: "Telegram", instagram: "Instagram", phone: "שיחות טלפון", crm: "CRM" },
       complexities: { basic: "Basic", standard: "Standard", advanced: "Advanced" },
