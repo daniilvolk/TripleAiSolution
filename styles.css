@@ -67,11 +67,11 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(280px, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
   gap: 18px;
-  width: min(1180px, calc(100% - 32px));
+  width: min(1260px, calc(100% - 32px));
   margin: 16px auto 0;
   padding: 12px;
   border: 1px solid var(--line);
@@ -88,6 +88,10 @@ textarea {
   min-width: max-content;
   color: var(--ink);
   font-weight: 760;
+}
+
+.brand-logo-only {
+  gap: 0;
 }
 
 .brand-copy {
@@ -107,6 +111,15 @@ textarea {
   font-weight: 720;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.brand-wordmark {
+  display: block;
+  width: clamp(270px, 24vw, 350px);
+  height: 66px;
+  filter: drop-shadow(0 0 14px rgba(77, 163, 255, 0.24)) brightness(1.16) contrast(1.08);
+  object-fit: contain;
+  object-position: left center;
 }
 
 .brand-mark {
@@ -142,8 +155,13 @@ textarea {
 
 .header-actions {
   align-items: center;
+  justify-content: flex-end;
   gap: 12px;
   margin-block-start: 0;
+}
+
+.site-nav {
+  justify-content: center;
 }
 
 .switch-group {
@@ -326,15 +344,15 @@ textarea {
 }
 
 .btn-small {
-  min-width: 184px;
+  min-width: 172px;
   min-height: 40px;
-  padding-inline: 16px;
+  padding-inline: 14px;
   font-size: 0.88rem;
   white-space: nowrap;
 }
 
 .cta-control {
-  min-width: 184px;
+  min-width: 172px;
 }
 
 .cta-control > span {
@@ -1128,6 +1146,7 @@ legend {
 
 @media (max-width: 1060px) {
   .site-header {
+    display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
     background: linear-gradient(180deg, rgba(9, 19, 34, 0.98), rgba(7, 17, 31, 0.96));
@@ -1200,6 +1219,11 @@ legend {
 
   .brand {
     font-size: 0.95rem;
+  }
+
+  .brand-wordmark {
+    width: min(278px, calc(100vw - 82px));
+    height: 66px;
   }
 
   h1 {
