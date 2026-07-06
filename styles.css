@@ -122,14 +122,15 @@ textarea {
 }
 
 .header-actions {
-  align-items: flex-end;
-  gap: 10px;
-  margin-block-start: 4px;
+  align-items: center;
+  gap: 12px;
+  margin-block-start: 0;
 }
 
 .switch-group {
   display: grid;
   gap: 5px;
+  align-self: center;
 }
 
 .switch-group > span {
@@ -137,6 +138,7 @@ textarea {
   font-size: 0.66rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .language-grid,
@@ -157,7 +159,7 @@ textarea {
 }
 
 .region-grid {
-  grid-template-columns: repeat(4, 36px);
+  grid-template-columns: repeat(2, 34px);
 }
 
 .language-grid button,
@@ -305,10 +307,19 @@ textarea {
 }
 
 .btn-small {
+  min-width: 184px;
   min-height: 40px;
-  padding-inline: 14px;
+  padding-inline: 16px;
   font-size: 0.88rem;
-  margin-block-end: 4px;
+  white-space: nowrap;
+}
+
+.cta-control {
+  min-width: 184px;
+}
+
+.cta-control > span {
+  opacity: 0;
 }
 
 .menu-toggle {
